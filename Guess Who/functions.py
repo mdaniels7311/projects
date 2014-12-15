@@ -1,5 +1,5 @@
 #this file contains all the functions for Guess Who. DO NOT DELETE!
-import picamera, time
+import picamera, time, json
 
 #gets picture of user
 def getUserImage(name):
@@ -26,8 +26,8 @@ def getUserImage(name):
         
     return filename
 
-##############################BANTA#############################
-    
+#####
+
 def getCharProfile():
     name = input("What is your name? ")
     filename = getUserImage(name)
@@ -67,3 +67,22 @@ def getCharProfile():
         if facial_features.lower()=="yes" or facial_features.lower()=="no":
             check=True
     
+#####
+
+def load():
+    try:
+        with open ("people.txt",mode='r') as file:
+            people = json.load(file)
+    except IOError:
+        print("Error detected")
+        people = []
+    return people
+
+people = load()
+        
+def store():
+    person = getCharProfile()
+    people.append(person)
+    
+    with open ("people.txt",mode='w') as chars:
+        json.dump(person,chars)
