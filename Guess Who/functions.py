@@ -66,6 +66,8 @@ def getCharProfile():
         facial_features = input("Do you have any facial features, such as freckles? ")
         if facial_features.lower()=="yes" or facial_features.lower()=="no":
             check=True
+
+    return [name, hair_colour, eye_colour, glasses, hat, gender, facial_hair, facial_features]    
     
 #####
 
