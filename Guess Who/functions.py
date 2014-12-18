@@ -34,7 +34,7 @@ def getCharProfile():
     check=False
     while check == False:
         hair_colour = input("What is your hair colour? ")
-        if hair_colour.lower()=="brown" or hair_colour.lower()=="black" or hair_colour.lower()=="blonde" or hair_colour.lower()=="ginger" or hair_colour.lower()==".":
+        if hair_colour.lower()=="brown" or hair_colour.lower()=="black" or hair_colour.lower()=="blonde" or hair_colour.lower()=="ginger" or hair_colour.lower()=="." or hair_colour.lower()=="purple" or hair_colour.lower()=="grey":
             check=True
     check=False
     while check == False:
@@ -87,7 +87,7 @@ def store():
     people.append(person)
     print(people)
     with open ("people.txt",mode='w') as chars:
-        json.dump(person,chars)
+        json.dump(people,chars)
 
 print("Running...")
 
