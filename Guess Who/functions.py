@@ -3,7 +3,7 @@ import picamera, time, json
 
 #gets picture of user
 def getUserImage(name):
-    try:
+    try: #try and except basically tries to do the code un the try indentation and if it fails and comes out with the error shown after the except, it will run the except indentation
         check=False
         while check == False:
             with picamera.PiCamera() as cam:
@@ -30,7 +30,7 @@ def getUserImage(name):
 #gets user details
 def getCharProfile():
     name = input("What is your name? ")
-    filename = getUserImage(name)
+    filename = getUserImage(name) #Runs the getUserImage function and saves its data as filename
     check=False
     while check == False:
         hair_colour = input("What is your hair colour? ")
@@ -67,7 +67,7 @@ def getCharProfile():
         if facial_features.lower()=="yes" or facial_features.lower()=="no" or facial_features.lower()==".":
             check=True
 
-    return [name, hair_colour, eye_colour, glasses, hat, gender, facial_hair, facial_features]    
+    return [name, hair_colour, eye_colour, glasses, hat, gender, facial_hair, facial_features]    #return prints the data entered in the variables in the square brackets
     
 
 #loading and storing the data
@@ -93,7 +93,7 @@ print("Running...")
 
 people = loadData()
 
-while len(people)<24:
+while len(people)<24: #if the length of the list is shorter than 24, it will keep running store()
     store()
 
 
