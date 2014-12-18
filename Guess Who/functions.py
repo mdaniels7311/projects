@@ -89,10 +89,11 @@ def store():
     with open ("people.txt",mode='w') as chars:
         json.dump(person,chars)
 
+print("Running...")
 
 people = loadData()
 
 while len(people)<24:
     store()
 
-print("Running....")
+
