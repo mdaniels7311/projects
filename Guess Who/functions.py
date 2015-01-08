@@ -22,7 +22,7 @@ def getUserImage(name):
         print("Camera not detected. Connect the camera to the slot behind the Ethernet port and restart the Raspberry Pi.")
         filename=""
     except picamera.exc.PiCameraRuntimeError:
-        print("bang")
+        print("Error!")
         
     return filename
 
