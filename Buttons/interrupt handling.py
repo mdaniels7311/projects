@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 
-pin = 27
+pin = 17
 count = 0
 
 def bucket_tipped(channel):
